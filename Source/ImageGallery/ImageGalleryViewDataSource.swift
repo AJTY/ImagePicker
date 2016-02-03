@@ -32,7 +32,32 @@ extension ImageGalleryView: UICollectionViewDataSource {
         }
 
         if self.selectedStack.containsAsset(asset) {
-          cell.selectedImageView.image = self.getImage("selectedImageGallery")
+			if let index = self.selectedStack.indexOf(asset) {
+				switch index {
+				case 0 :
+					cell.selectedImageView.image = self.getImage("selectedImageGallery1")
+					cell.selectedImageView.transform = CGAffineTransformMakeScale(0, 0)
+					break
+				case 1 :
+					cell.selectedImageView.image = self.getImage("selectedImageGallery2")
+					cell.selectedImageView.transform = CGAffineTransformMakeScale(0, 0)
+
+					break
+				case 2 :
+					cell.selectedImageView.image = self.getImage("selectedImageGallery3")
+					cell.selectedImageView.transform = CGAffineTransformMakeScale(0, 0)
+
+					break
+				case 3 :
+					cell.selectedImageView.image = self.getImage("selectedImageGallery4")
+					cell.selectedImageView.transform = CGAffineTransformMakeScale(0, 0)
+				
+					break
+				default:
+					break
+				}
+			}
+
           cell.selectedImageView.alpha = 1
           cell.selectedImageView.transform = CGAffineTransformIdentity
         } else {

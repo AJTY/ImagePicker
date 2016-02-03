@@ -30,4 +30,8 @@ public class ImageStack {
   public func containsAsset(asset: PHAsset) -> Bool {
     return assets.contains(asset)
   }
+	
+  public func indexOf(asset : PHAsset) -> Int? {
+    return assets.indexOf(asset)
+  }
 }
