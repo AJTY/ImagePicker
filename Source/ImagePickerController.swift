@@ -171,7 +171,7 @@ public class ImagePickerController: UIViewController {
   func volumeChanged(notification: NSNotification) {
     guard let slider = volumeView.subviews.filter({ $0 is UISlider }).first as? UISlider else { return }
     slider.setValue(volume, animated: false)
-    cameraController.takePicture()
+//    cameraController.takePicture()
   }
 
   func adjustButtonTitle(notification: NSNotification) {
