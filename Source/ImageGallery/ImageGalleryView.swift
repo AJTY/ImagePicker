@@ -183,7 +183,7 @@ open class ImageGalleryView: UIView {
 
   // MARK: - Pan gesture recognizer
 
-  func handlePanGestureRecognizer(_ gesture: UIPanGestureRecognizer) {
+  @objc func handlePanGestureRecognizer(_ gesture: UIPanGestureRecognizer) {
     guard let superview = superview else { return }
 
     let translation = gesture.translation(in: superview)
@@ -270,11 +270,11 @@ extension ImageGalleryView: UICollectionViewDelegate {
             cell.selectedImageView.image = nil
         })
         self.selectedStack.dropAsset(asset)
-		self.collectionView.performBatchUpdates({ () -> Void in
+    self.collectionView.performBatchUpdates({ () -> Void in
       self.collectionView.reloadSections(NSIndexSet(index: 0) as IndexSet)
-			}, completion: nil)
-		
-		
+      }, completion: nil)
+    
+    
       } else if self.imageLimit == 0 || self.imageLimit > self.selectedStack.assets.count {
 
         cell.selectedImageView.image = self.getImage(name: "selectedImageGallery")
@@ -293,7 +293,7 @@ extension ImageGalleryView: UICollectionViewDelegate {
         }
 
         cell.selectedImageView.transform = CGAffineTransform(scaleX: 0, y: 0)
-        UIView.animate(withDuration: 0.2, animations: { _ in
+        UIView.animate(withDuration: 0.2, animations: { 
           cell.selectedImageView.transform = CGAffineTransform.identity
         })
 
