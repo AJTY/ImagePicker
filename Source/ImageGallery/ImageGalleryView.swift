@@ -278,20 +278,20 @@ extension ImageGalleryView: UICollectionViewDelegate {
       } else if self.imageLimit == 0 || self.imageLimit > self.selectedStack.assets.count {
 
         cell.selectedImageView.image = self.getImage(name: "selectedImageGallery")
+
         if self.selectedStack.assets.count == 0 {
-          cell.selectedImageView.image = self.getImage(name: "selectedImageGallery1")
+          cell.selectedImageView.image = AssetManager.getImage("selectedImageGallery1")
         }
         if self.selectedStack.assets.count == 1 {
-          cell.selectedImageView.image = self.getImage(name: "selectedImageGallery2")
+          cell.selectedImageView.image = AssetManager.getImage("selectedImageGallery2")
         }
         if self.selectedStack.assets.count == 2 {
-          cell.selectedImageView.image = self.getImage(name: "selectedImageGallery3")
+          cell.selectedImageView.image = AssetManager.getImage("selectedImageGallery3")
         }
         if self.selectedStack.assets.count == 3 {
-          cell.selectedImageView.image = self.getImage(name: "selectedImageGallery4")
+          cell.selectedImageView.image = AssetManager.getImage("selectedImageGallery4")
         }
 
-        cell.selectedImageView.image = AssetManager.getImage("selectedImageGallery")
         cell.selectedImageView.transform = CGAffineTransform(scaleX: 0, y: 0)
         UIView.animate(withDuration: 0.2, animations: { _ in
           cell.selectedImageView.transform = CGAffineTransform.identity

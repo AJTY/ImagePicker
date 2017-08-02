@@ -45,7 +45,7 @@ extension ImageGalleryView: UICollectionViewDataSource {
 
               break
             case 2 :
-              cell.selectedImageView.image = AssetManager.getImage("selectedImageGaller3")
+              cell.selectedImageView.image = AssetManager.getImage("selectedImageGallery3")
               cell.selectedImageView.transform = CGAffineTransform(scaleX: 0, y: 0)
 
               break
