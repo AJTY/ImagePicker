@@ -297,10 +297,12 @@ extension ImageGalleryView: UICollectionViewDelegate {
           cell.selectedImageView.transform = CGAffineTransform.identity
         })
 
-        self.selectedStack.pushAsset(asset)
-        self.collectionView.performBatchUpdates({ () -> Void in
-          self.collectionView.reloadSections(NSIndexSet(index: 0) as IndexSet)
-        }, completion: nil)
+        if self.imageLimit < self.selectedStack.assets.count {
+          self.selectedStack.pushAsset(asset)
+          self.collectionView.performBatchUpdates({ () -> Void in
+            self.collectionView.reloadSections(NSIndexSet(index: 0) as IndexSet)
+          }, completion: nil)
+        }
         //    self.collectionView.reloadData()
       }
     }
